@@ -72,11 +72,10 @@ class SimpleSensorFluidics (i3.Circuit):
         specs = [
             i3.Place('marker', (3200,4500)),
             i3.Place('idOnChip', (3200, 11500)),
-            #i3.Rotation('idOnChip', (4500, 3500)),
 
             i3.Place('channel:in', (0, 0)),
-            i3.Place('inlet:out', (-800,-900)),#(-900,-800)),
-            i3.Place('outlet:out', (-800,8456+900)),#(8456+900,-800)),
+            i3.Place('inlet:out', (-800,-900)),
+            i3.Place('outlet:out', (-800,8456+900)),
             i3.FlipV('outlet'),
             microfluidics.ConnectManhattan([('channel:in','inlet:out')], bend_radius=250),
             microfluidics.ConnectManhattan([('channel:out', 'outlet:out', )], bend_radius=250),
